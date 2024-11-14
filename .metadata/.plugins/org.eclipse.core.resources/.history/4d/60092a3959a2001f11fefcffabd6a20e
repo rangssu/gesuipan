@@ -1,0 +1,18 @@
+package com.example.Gesuipan.DTO;
+
+import java.sql.Timestamp;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class panDTO {
+	private Long id;
+	private String title;
+	private String content;
+	private String writer;
+	private Timestamp reg;
+	
+	
+}

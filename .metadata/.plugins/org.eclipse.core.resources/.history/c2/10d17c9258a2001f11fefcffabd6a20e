@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.pan">
+
+	<!-- 보기 -->
+	<select id="getPan">
+		select * from gesuipan order by id desc
+	</select>
+
+	<!-- 작성 -->
+	<insert id="insertpan">
+	 	insert into gesuipan (title, content, writer) values(#{title}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="updatepan">
+		update gesuipan SET title = #{title}, content = #{content}
+	</update>
+	
+	<!-- 삭제 -->
+	
+	
+</mapper>
+

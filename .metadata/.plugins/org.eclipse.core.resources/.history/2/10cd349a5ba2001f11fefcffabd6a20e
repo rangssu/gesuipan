@@ -1,0 +1,8 @@
+package com.example.Gesuipan.controller;
+
+import com.example.Gesuipan.service.panService;
+
+public class panController {
+
+	private final panService panService;
+}
