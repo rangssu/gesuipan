@@ -1,0 +1,31 @@
+package com.example.Gesuipan.service;
+
+import com.example.Gesuipan.DTO.panDTO;
+import org.springframework.stereotype.Service;
+
+@Service
+public class panService implements panserv {
+	
+	
+	
+	
+	@Override
+    public panDTO getPan() {
+        return new panDTO();
+    }
+    
+    // 게시물 저장하는 메서드
+	@Override
+    public void insertpan(panDTO post) {
+    }
+    
+    // 게시물 업데이트하는 메서드
+	@Override
+    public void updatepan(panDTO post) {
+    }
+    
+    // 게시물 삭제하는 메서드
+	@Override
+    public void deletepan(int id) {
+    }
+}
