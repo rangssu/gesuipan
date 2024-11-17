@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
-    <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
@@ -18,4 +17,8 @@
     <fullyQualifiedTypeName name="com.example.Gesuipan.service.panService"/>
     <fullyQualifiedTypeName name="com.example.Gesuipan.mapper.panMapper"/>
     <fullyQualifiedTypeName name="com.example.Gesuipan.DTO.panDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
 </qualifiedTypeNameHistroy>

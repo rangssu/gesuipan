@@ -1,0 +1,6 @@
+package com.example.Gesuipan.entity;
+
+@Entity
+public class Board {
+
+}

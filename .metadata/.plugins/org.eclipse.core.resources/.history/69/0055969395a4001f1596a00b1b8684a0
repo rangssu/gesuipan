@@ -1,0 +1,10 @@
+package com.example.Gesuipan.entity;
+
+import lombok.Getter;
+
+@entity
+@Getter
+public class Board {
+	
+	
+}
