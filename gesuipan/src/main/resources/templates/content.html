@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>content</title>
+</head>
+<body>
+    <h1>게시글 상세보기</h1>
+    <div>
+        <h2 th:text="${post.title}">게시글 제목</h2>
+        <span>
+            작성자: <span th:text="${post.writer}">작성자 이름</span> | 
+        </span>
+    </div>
+    
+    <div>
+        <p th:text="${post.content}">게시글 내용</p>
+    </div>
+    
+    <div>
+        <a href="/gesuipan">목록으로</a>
+        <a th:href="@{/gesuipan/update/{id}(id=${post.id})}">수정</a>
+        <a th:href="@{/gesuipan/{id}/delete(id=${post.id})}">삭제</a>
+    </div>
+</body>
+</html>

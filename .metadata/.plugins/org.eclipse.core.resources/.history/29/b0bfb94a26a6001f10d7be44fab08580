@@ -1,0 +1,17 @@
+package com.example.Gesuipan.entity;
+
+import java.sql.Timestamp;
+
+import jakarta.persistence.Entity;
+import lombok.Getter;
+
+@Entity
+@Getter
+public class Board {
+	private int id;
+	private String title;
+	private String content;
+	private String writer;
+	private Timestamp reg;
+	
+}

@@ -1,8 +1,11 @@
 package com.example.Gesuipan.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +30,8 @@ public class BoardController {
 	// 리스트 보이는것
 	@GetMapping
 	public String getPan(Model model) {
-		model.addAttribute("post", boardService.getAllPan());
+		List<BoardDTO> posts = boardService.getAllPan();
+		model.addAttribute("posts", posts);
 		return "/list";
 	}
 
@@ -46,15 +50,16 @@ public class BoardController {
 	}
 
 	// 수정
-	@GetMapping("/{id}/update")
-	public String updatePanForm(@PathVariable int id, Model model) {
-
+	@GetMapping("/update/{id}")
+	public String updatePanForm(@PathVariable("id") int id, Model model) {
+		BoardDTO post = boardService.getPanById(id);
+		model.addAttribute("post", post);
 		return "/update";
 	}
 
 	// 수정 처리
-	@PostMapping("/{id}")
-	public String updatePan(@PathVariable int id, BoardDTO post) {
+	@PostMapping("/update/{id}")
+	public String updatePan(@PathVariable("id") int id,@ModelAttribute BoardDTO post) {
 		post.setId(id);
 		boardService.updatepan(post);
 		return "redirect:/gesuipan";
@@ -62,9 +67,16 @@ public class BoardController {
 
 	// 삭제
 	@GetMapping("/{id}/delete")
-	public String deletePan(@PathVariable int id) {
+	public String deletePan(@PathVariable("id") int id) {
 		boardService.deletepan(id);
 		return "redirect:/gesuipan";
 	}
 
+	// 글 내용
+	@GetMapping("/content/{id}")
+	public String getPostById(@PathVariable("id") int id, Model model) {
+		BoardDTO post = boardService.getPanById(id);
+		model.addAttribute("post", post);
+		return "/content";
+	}
 }

@@ -22,3 +22,6 @@ DTO는 두는데 Entity는 잘 모르겟음
 	: 초기화 되지 않은 final 필드와 @NonNull 필드를 매개변수로 생성자 생성한다.
 @AllArgsConstructor
 	: 모든 필드를 매개변수로 생성자를 생성한다.
+	
+list 에선 posts 로 보내고.
+content 에선 post로 보냄.
