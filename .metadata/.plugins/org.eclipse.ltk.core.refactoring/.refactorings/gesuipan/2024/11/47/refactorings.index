@@ -5,3 +5,7 @@
 1731813853561	Rename type 'panMapper'
 1731813857998	Rename type 'panservice'
 1731813863398	Rename type 'panServiceImpl'
+1732075351973	Rename resource 'pan.xml'
+1732077711733	Delete element
+1732078858252	Rename type 'user'
+1732081727317	Rename resource 'register.html'

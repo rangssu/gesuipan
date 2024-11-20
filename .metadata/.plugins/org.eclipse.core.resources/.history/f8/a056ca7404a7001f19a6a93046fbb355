@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.Gesuipan.mapper.UserMapper">
+
+	<!-- 회원가입 -->
+	<insert id="registerUser">
+		insert into user (userId, password) values (#{userId}, #{password})
+	</insert>
+
+	<!-- 아이디 찾기? 아이디조회? -->
+	<select id="findByUserId" resultType="com.example.Gesuipan.DTO.userDTO">
+		select * from user where userId = #{userId}
+	</select>
+
+</mapper>

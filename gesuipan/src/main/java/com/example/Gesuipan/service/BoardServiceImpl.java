@@ -4,6 +4,7 @@ import com.example.Gesuipan.DTO.BoardDTO;
 import com.example.Gesuipan.mapper.BoardMapper;
 
 import lombok.RequiredArgsConstructor;
+//import repository.BoardRepository;
 
 import java.util.List;
 
@@ -15,10 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class BoardServiceImpl implements Boardservice {
 	
 	private final BoardMapper boardMapper;
-	
-//	public BoardServiceImpl(BoardMapper boardMapper) {
-//		this.boardMapper = boardMapper;
-//	}
 	
 	// 번호 갖고오는거
     @Override
@@ -55,3 +52,9 @@ public class BoardServiceImpl implements Boardservice {
 		boardMapper.deletepan(id);
     }
 }
+
+//	private final BoardRepository boardRepository;
+
+//	public BoardServiceImpl(BoardMapper boardMapper) {
+//		this.boardMapper = boardMapper;
+//	}

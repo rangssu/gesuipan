@@ -1,0 +1,8 @@
+package com.example.Gesuipan.mapper;
+
+import org.springframework.stereotype.Repository;
+
+@Repository		//@Repository (퍼시스턴스 레이어, DB나 파일같은 외부 I/O 작업을 처리함)
+public interface UserMapper {
+
+}

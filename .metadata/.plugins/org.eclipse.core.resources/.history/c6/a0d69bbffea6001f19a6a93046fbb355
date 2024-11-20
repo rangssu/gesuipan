@@ -1,0 +1,19 @@
+package com.example.Gesuipan.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.Gesuipan.DTO.UserDTO;
+import com.example.Gesuipan.mapper.UserMapper;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class UserServiceImpl {
+	
+	private final UserMapper userMapper;
+	
+	public void registerUser(UserDTO user) {
+		userMapper.registerUser(user);
+	}
+}
