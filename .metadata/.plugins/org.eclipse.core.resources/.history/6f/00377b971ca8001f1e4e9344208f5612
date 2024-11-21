@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>list</title>
+</head>
+<body>
+    <h1>게시판 목록</h1>
+    <a href="/gesuipan/write">새 글 작성</a>
+    <ul>
+        <li th:each="post : ${posts}">
+            <a th:href="@{/gesuipan/content/{id}(id=${post.id})}" th:text="${post.title}"></a>
+            <span th:text="${post.writer}"></span>
+            <a th:href="@{/gesuipan/{id}/delete(id=${post.id})}">삭제</a>
+        </li>
+    </ul>
+    <a th:href="@{/user/regist}">회원가입</a>
+    <a th:href="@{/user/login}">로긴</a>
+    <a th:if=@{session.UserDTO.userId}></a>
+</body>
+</html>

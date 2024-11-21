@@ -27,13 +27,13 @@ public class UserController {
 		return "/regist";
 	}
 	
+	// TODO 현재 문제점 : id 체크를 만들지도 않았고, Unique로 지정하지도 않아서 중복값이 들어감
 	//회원가입 처리
 	@PostMapping("regist")
 	public String registerUser(@ModelAttribute UserDTO user) {
 		userService.registerUser(user);
 		return "redirect:/user/login";	//회원가입 성공시 로그인 창으로
 	}
-	
 	//로그인 화면
 	@GetMapping("/login")
 	public String loginForm(Model model) {
