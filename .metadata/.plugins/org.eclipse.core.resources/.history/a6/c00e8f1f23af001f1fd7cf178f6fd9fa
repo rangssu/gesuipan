@@ -15,11 +15,9 @@
         </li>
     </ul>
     <a th:href="@{/user/regist}">회원가입</a>
-    <a th:if="${session.loginUser == null}" th:href="@{/user/login}">로긴</a>
-    <a th:if="${session.loginUser != null}" th:href="@{/user/logout}">로그아웃</a>
-    <br>
-    <a th:if="${session.loginUser != null}">세션 있음</a>
-    <a th:if="${session.loginUser == null}">세션 없</a>
+    <a th:href="@{/user/login}">로긴</a>
+    <a th:href="@{/user/logout}">로그아웃</a>
+    
     <!-- 
     	<input type="text" th:placeholder=@{session.UserDTO.userId}"/>
      -->

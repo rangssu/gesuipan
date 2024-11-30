@@ -21,3 +21,6 @@ create table user(
 );
 
 select * from user;
+
+delete from gesuipan where userId = rang
+commit;
