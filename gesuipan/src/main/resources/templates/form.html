@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>글 작성</title>
 </head>
 <body>
     <h1>form</h1>
-
+    <a th:if="${session.loginUser != null}">세션 있음</a>
+    <a th:if="${session.loginUser == null}">세션 없</a>
+    <a th:if="${session.loginUser != null}" th:text=${session.loginUser.userId}></a>
     <!-- 글 작성 폼 -->
     <form action="/gesuipan" method="post" th:object="${post}">
         <div>
@@ -21,9 +23,9 @@
 		<!-- todo 여긴 로그인 값 받아서 닉네임으로 들어갈 거임. -->
         <div>
             <label for="writer">작성자:</label>
-            <input type="text" id="writer" th:field="*{writer}" placeholder="작성자" required/>
+            <input type="text" id="writer" name="writer" th:if="${session.loginUser != null}"  th:value="${session.loginUser.userId}" readonly="readonly" required/>
+            <input type="text" id="writer" name="writer" th:if="${session.loginUser == null}"  value="익명" readonly="readonly" required/>
         </div>
-
         <div>
             <button type="submit">작성하기</button>
         </div>

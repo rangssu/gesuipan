@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>글 작성</title>
+</head>
+<body>
+    <h1>form</h1>
+    <a th:if="${session.loginUser != null}">세션 있음</a>
+    <a th:if="${session.loginUser == null}">세션 없</a>
+    <!-- 글 작성 폼 -->
+    <form action="/gesuipan" method="post" th:object="${post}">
+        <div>
+            <label for="title">제목:</label>
+            <input type="text" id="title" th:field="*{title}" placeholder="제목" required/>
+        </div>
+
+        <div>
+            <label for="content">내용:</label>
+            <textarea id="content" th:field="*{content}" placeholder="내용" required></textarea>
+        </div>
+
+		<!-- todo 여긴 로그인 값 받아서 닉네임으로 들어갈 거임. -->
+        <div>
+            <label for="writer">작성자:</label>
+   			<a th:if="${session.loginUser == null}">세션 없</a>
+            <input type="text" id="writer" th:if="${session.loginUser != null}" th:field="*{writer}" th:text=${session.loginUser.userId} readonly="readonly" required/>
+            <input type="text" id="writer" th:if="${session.loginUser == null}" th:field="*{writer}" th:text=익면 readonly="readonly" required/>
+        </div>
+
+        <div>
+            <button type="submit">작성하기</button>
+        </div>
+    </form>
+
+    <a href="/gesuipan">목록으로</a>
+</body>
+</html>

@@ -1,5 +1,0 @@
-package com.example.Gesuipan.mapper;
-
-public interface UserMapper {
-
-}

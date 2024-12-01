@@ -9,6 +9,9 @@
 		<br />
 		비밀번호 :<input type="password" th:field="*{password}" id="password" required />
 		<br />
+		<div style="color: red;">
+	        <p th:if="${error}" th:text="${error}"></p>
+	    </div>
 		<button type="submit">로그인</button>
 	</form>
 </body>
